@@ -47,6 +47,8 @@ jobs:
           cp requirements.txt deployment_package/
           cp -r static deployment_package/ 2>/dev/null || true
           cp -r templates deployment_package/ 2>/dev/null || true
+          cd deployment_package
+          zip -r ../app.zip . -x "*.pyc" "__pycache__*" "*.db"
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
