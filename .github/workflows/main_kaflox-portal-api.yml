@@ -84,4 +84,4 @@ jobs:
           app-name: 'kaflox-portal-api'
           slot-name: 'Production'
           package: './app.zip'
-          startup-command: 'gunicorn --bind=0.0.0.0 --timeout 600 kaflox_portal.wsgi:application'
+          startup-command: 'cd /home/site/wwwroot && gunicorn --bind=0.0.0.0 --timeout 600 kaflox_portal.wsgi:application'
