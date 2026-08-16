@@ -1,0 +1,50 @@
+# Core
+Django==5.0.6
+djangorestframework==3.15.2
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.3.1
+django-filter==24.2
+python-decouple==3.8
+
+# Database
+psycopg2-binary==2.9.9
+
+# Azure
+azure-storage-blob==12.20.0
+azure-identity==1.17.1
+django-storages[azure]==1.14.3
+
+# Cache / Queue
+redis==5.0.6
+celery==5.4.0
+django-celery-beat==2.6.0
+django-celery-results==2.5.1
+
+# Authentication
+msal==1.29.0
+
+# Payments
+requests==2.32.3
+
+# Notifications
+azure-communication-email==1.0.0
+azure-communication-sms==1.0.1
+
+# AI
+openai==1.35.7
+
+# PDF Reports
+reportlab==4.2.2
+Pillow==10.4.0
+
+# Utilities
+python-slugify==8.0.4
+Faker==25.9.2
+django-extensions==3.2.3
+
+# Dev / Testing
+pytest==8.2.2
+pytest-django==4.8.0
+factory-boy==3.3.0
+coverage==7.5.4
+gunicorn==22.0.0
