@@ -40,16 +40,13 @@ jobs:
       - name: Create deployment package
         run: |
           mkdir -p deployment_package
-          # Copy only necessary files
+          cp -r apps deployment_package/
           cp -r kaflox_portal deployment_package/
           cp -r staticfiles deployment_package/ 2>/dev/null || true
           cp manage.py deployment_package/
           cp requirements.txt deployment_package/
           cp -r static deployment_package/ 2>/dev/null || true
           cp -r templates deployment_package/ 2>/dev/null || true
-          # Create a proper zip
-          cd deployment_package
-          zip -r ../app.zip . -x "*.pyc" "__pycache__*" "*.db"
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
@@ -84,4 +81,4 @@ jobs:
           app-name: 'kaflox-portal-api'
           slot-name: 'Production'
           package: './app.zip'
-          startup-command: 'cd /home/site/wwwroot && gunicorn --bind=0.0.0.0 --timeout 600 kaflox_portal.wsgi:application'
+          startup-command: 'gunicorn --bind=0.0.0.0 --timeout 600 kaflox_portal.wsgi:application'
