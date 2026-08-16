@@ -31,6 +31,9 @@ jobs:
           pip install gunicorn whitenoise
 
       - name: Collect static files
+        env:
+            SECRET_KEY: ${{ secrets.SECRET_KEY }}
+            DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
         run: |
           python manage.py collectstatic --noinput
 
