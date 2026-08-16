@@ -48,3 +48,4 @@ pytest-django==4.8.0
 factory-boy==3.3.0
 coverage==7.5.4
 gunicorn==22.0.0
+whitenoise==6.12.0
