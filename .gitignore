@@ -23,3 +23,4 @@ apps/users/management/commands/__pycache__
 .env
 db.sqlite3
 venv
+mediafiles
